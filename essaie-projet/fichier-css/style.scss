@@ -1,0 +1,368 @@
+
+
+.boutton {
+  width: 100px;
+  height: 50px;
+  margin: 0 auto;
+  background-color: blanchedalmond;
+  border-radius: 10px;
+  border: 2px solid white;
+  box-shadow: 0px 0px 10px 2px black;
+}
+
+.card{
+  position: relative;
+  z-index: 2;
+  margin-top: 30px;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #000000;
+  box-shadow: 0px 0px 10px 2px #000000; 
+  background-color: #303245;
+  border-radius: 20px;
+}
+
+.idUser{
+  font-size: 20px;
+  color: #ffffff;
+  padding-top: 20px;
+  
+
+}
+
+.boutton1 {
+
+  background-color: blanchedalmond;
+  border-radius: 3px;
+  border: 2px solid black;
+  
+
+}
+
+
+
+.boutton2 {
+
+  background-color:blanchedalmond;
+  border-radius: 3px;
+  border: 2px solid black;
+}
+
+.boutton3 {
+  margin-left: 50px;
+  background-color:rgba(0, 227, 38, 0.916);
+  border-radius: 10px;
+  border: 2px solid black;
+  
+
+}
+
+.boutton4 {
+  margin-right: 50px;
+  background-color: rgb(213, 0, 0);
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.space {
+justify-content: flex-end;
+}
+
+.textValue {
+  font-size: 20px;
+  padding-right: 7px;
+  color: #000000;
+  padding-top: 20px;
+
+}
+
+.flexible {
+  display: flex;
+  justify-content:center;
+}
+
+
+
+.center {
+  margin: 0 auto;
+  padding-bottom: 0 auto;
+}
+
+.dataProfil {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.stickBottom{
+margin-top: 100px;
+}
+
+#imageVue {
+  background-image: url(http://localhost\\Lien-image-Sql\\background-image.png); 
+  /* background-size: contain */
+}
+
+
+.banner {
+  position: relative;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(#000000, #15172b);
+  height: 17.5%;
+  border-bottom: solid #ffffff 3px;
+  box-shadow: 0px 0px 44px black;
+  background-image: linear-gradient(rgba(45, 21, 98, 0.952), rgba(0, 0, 0, 0.5)),
+  url("https://static.nationalgeographic.fr/files/styles/image_3200/public/our-galaxy-milky-way-contains-at-least-100-billion-stars_14.jpg?w=1600&h=900");
+
+}
+
+.container {
+  position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+     height: 720px;
+     background-size : contain;
+     background-image: url(https://www.brassart.fr/data/projects/157/pictures/244.1570007783.jpg);
+    //  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+     overflow: hidden;
+     
+}
+
+.column{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 65%;
+  
+}
+
+.card-left{
+          opacity: 0.6;
+          z-index: 2;
+					width: 170px;
+					position: absolute;
+          left: 0;
+					background-color: #d818ac;
+					// overflow-x: hidden;
+					box-shadow: 0px 0px 44px black;
+          // border-right: #ffffff solid 3px;
+          height: 65%;
+          
+
+          
+          
+}
+
+.card-left:hover {
+  transition-duration: 1.5s;
+}
+
+
+.card-left a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  opacity: 0;
+  
+  
+  
+}
+
+
+
+.card-right{
+  z-index: 2;
+  position: absolute;
+  text-align: center;
+  right: 0;
+  padding: 0px 30px 0px 30px;
+  border-left: #fff solid 2px;
+  border-bottom: #fff solid 2px;
+  box-shadow: 0px 0px 10px 2px #000000; 
+  background-color: #303245;
+  height: 15%;
+  width: 100px;
+
+}
+
+.footer {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  border-top: white solid 3px;
+  // background: linear-gradient(#15172b, #000000);
+  background-color: black;
+  height: 17.5%;
+  bottom: 0;
+}
+
+.button-left{
+    background-color: blanchedalmond;
+    border-radius: 12px;
+    border: 0;
+    color: #000000;
+    cursor: pointer;
+    font-size: 18px;
+    outline: 0;
+    text-decoration: none;
+    width: 110px;
+    display: inline-block; 
+    
+
+}
+
+    .button-left:hover{
+  transform: scale(1.1);
+    background-position: -60px;
+    box-shadow: 0 3px 6px;
+}
+
+.boutton:hover{
+  transform: scale(1.1);
+    background-position: -60px;
+    box-shadow: 0 3px 6px;
+}
+
+.boutton1:hover{
+  transform: scale(1.1);
+    background-position: -60px;
+    box-shadow: 0 3px 6px;
+}
+
+.boutton2:hover{
+  transform: scale(1.1);
+    background-position: -60px;
+    box-shadow: 0 3px 6px;
+}
+
+.boutton3:hover{
+  transform: scale(1.1);
+    background-position: -60px;
+    box-shadow: 0 3px 6px;
+}
+
+.boutton4:hover{
+  transform: scale(1.1);
+    background-position: -60px;
+    box-shadow: 0 3px 6px;
+}
+
+.card-right:hover{
+  transition: height 1s ease-in-out;
+    height:25%;
+}
+
+@mixin sp-layout {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+
+  
+
+
+@function random_range($min, $max) {
+  $rand: random();
+  $random_range: $min + floor($rand * (($max - $min) + 1));
+  @return $random_range;
+}
+
+.stars {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 65%;
+  transform: rotate(-45deg);
+
+
+}
+
+.star {
+  z-index: 1;
+  $star-count: 50;
+  --star-color: var(--primary-color);
+  --star-tail-length: 6em;
+  --star-tail-height: 2px;
+  --star-width: calc(var(--star-tail-length) / 6);
+  --fall-duration: 9s;
+  --tail-fade-duration: var(--fall-duration);
+  position: absolute;
+  top: var(--top-offset);
+  left: 0;
+  width: var(--star-tail-length);
+  height: var(--star-tail-height);
+  color: var(--star-color);
+  background: linear-gradient(45deg, black, transparent);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px currentColor);
+  transform: translate3d(104em, 0, 0);
+  animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+  
+  @include sp-layout {
+    // For mobile performance, tail-fade animation will be removed QAQ
+    animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+  }
+
+  @for $i from 1 through $star-count {
+    &:nth-child(#{$i}) {
+      --star-tail-length: #{calc(random_range(500em, 750em) / 100)};
+      --top-offset: #{calc(random_range(0vh, 10000vh) / 100)};
+      --fall-duration: #{calc(random_range(6000, 12000s) / 1000)};
+      --fall-delay: #{calc(random_range(0, 10000s) / 1000)};
+    }
+  }
+
+  &::before, &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: calc(var(--star-width) / -2);
+    width: var(--star-width);
+    height: 100%;
+    background: linear-gradient(45deg, transparent, currentColor, transparent);
+    border-radius: inherit;
+    animation: blink 2s linear infinite;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(-30em, 0, 0);
+  }
+}
+
+@keyframes tail-fade {
+  0%, 50% {
+    width: var(--star-tail-length);
+    opacity: 1;
+  }
+
+  70%, 80% {
+    width: 0;
+    opacity: 0.4;
+  }
+
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.6;
+  }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../Fichier css/styleForm.css">
+</head>
+
+<body>
+  <div class="form">
+    <form enctype="multipart/form-data" action="http://localhost:3000/Essaie-projet/Fichier-php/connexion.php" method="POST">
+      <div class="title">Connexion</div>
+      <div class="subtitle">Connectez-vous</div>
+      <div class="input-container ic1">
+        <input id="firstname" class="input" type="text" placeholder=" " name="prenom" />
+        <div class="cut"></div>
+        <label for="firstname" class="placeholder">Prénom</label>
+      </div>
+      <div class="input-container ic2">
+        <input id="lastname" class="input" type="text" placeholder=" " name="nom" />
+        <div class="cut"></div>
+        <label for="lastname" class="placeholder">Nom</label>
+      </div>
+   
+      <button type="text" class="submit">Envoyez</button>
+    </form>
+  </div>
+</body>
+
+</html>
+

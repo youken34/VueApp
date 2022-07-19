@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>         <!-- Définition du style css !-->
+    <div class="blog-card spring-fever" id="container" class="card" >
+            <attempt 
+            @move="move()" 
+            @again="again()" 
+            @got-it="gotIt()" 
+            @flip="flipped = !flipped"
+            :is-repeat="isRepeat" 
+            :flipped="flipped" 
+            :front="front" 
+            :back="back">
+            </attempt>
+            <div class="navigation"> 
+                <button @click="move(1)" type="button">&#8592</button>
+                <button @click="move(-1)"type="button">&#8594</button> 
+        </div>
+            </div>  
+
+                     <script src="data.js"></script>
+					<script src="https://unpkg.com/vue@3.2.33/dist/vue.global.js"></script>
+
+                    <script>
+                        const remplirCaractère = {
+                            data () {
+                                return {
+                                    index: 0,
+                                    cards: cards,
+                                    flipped: true,
+                                    editIndex: -1,
+                                    fontSize: 16,
+                                    size: 30
+
+                                };
+                            },
+                            computed: {
+                                
+                                front() {
+                                    return this.cards[this.index].front;
+                                },
+                                back() {
+                                    return this.cards[this.index].back;
+                                },
+                                isRepeat () {
+                                    return this.cards[this.index].isRepeat;
+                                }
+                            },
+							methods: {
+								move (change) {
+
+                                    if (this.cards[this.index + change]) {
+                                        this.flipped = true;
+                                        this.index += change;
+                                    }
+                                    else {
+                                        this.index = change == 1 ? 0 : this.cards.length - 1
+                                        // si change = 1, alors index = 0
+                                        // sinon l'index vaudra la valeur maximal de l'array - 1
+                                    }
+                                },
+                                gotIt() {
+                                    if (this.cards.length === 1) {
+                                        console.log("Well done");
+                                    }
+                                    this.cards.splice(this.index, 1);
+                                    //(positionElementSupprimé, nombreElementSuprimé)
+                                    if (! this.cards[this.index]) {
+                                        this.index = 0;
+                                    }
+                                    this.flipped = false;
+                                },
+                                again () {
+                                    this.cards[this.index].isRepeat = true;
+                                    this.move(1);
+                                    this.flipped = false;
+
+                                }
+							}
+                           
+                        };
+            
+                      const app =  Vue.createApp(remplirCaractère);
+
+    app.component('attempt' , {
+        template: 
+            '<div @click="$emit(\'flip\')" class="title-content" :class="{again: isRepeat}"> \
+                <div v-if="flipped" class="card" v-text="front"></div> \
+                <div v-else>  \
+                <div v-html="back"></div> \
+                <div class="score"> \
+                    <button @click="$emit(\'got-it\')">Got It</button> \
+                    <button @click="$emit(\'again\')">Again</button> \
+                    <br>  \
+                </div> \
+            </div> \
+            </div>',
+        props: [ 'isRepeat', 'flipped', 'front', 'back', 'move()'],
+        name: "essai",
+        
+    },
+    
+    )
+
+    app.mount('#container');
+                    </script>
+</body>
+</html>
+
+<!-- 
+<textarea v-model="textText" id=""></textarea>
+{{ caractereRestant }}
+textText: ""
+caractereRestant() {
+    return 200 - this.textText.length + "restant";
+},
+
+<p ="v-cloack"></p>
+la propriété v-cloack sert à définir une action (définie dans le css) en attendant qu'une la balise p s'affiche, le temps
+qu'elle s'execute
+
+v-text="variable" la balise qui comport cette attribut affichera le contenue de la variable entre guillemet
+
+v-html : la même chose, sauf que les balises sont directement executé en tant qu'html, donc elle ne s'affiche pas comme du texte
+
+v-show="condition" : affiche une balise si la condition vaut true
+
+@keydown.enter : effectue une action lorsque "enter" est préssé
+
+<div :style="{'font-size': fontSize + 'px'}">  
+le paramètre :style='' permet de définir des propriétés CSS dynamique 
+(notamment avec des variables comme ici la variable fontSize)
+à l'intérieur d'une div html
+
+@click.stop: la propagation de l'évènement click sera stopper, c'est à dire que si un boutton figure dans un autre bouton
+et qu'il possède ne possède pas @click.stop, une fois enclenché, les deux boutons seront activé
+
+:class="{again: isRepeat}" variable boolean au sein d'une div 
+ici, la class CSS "again" prendra effet tant que isRepeat = true
+
+app.component('read-more', {
+    template: <propriété HTML>
+}
+) 
+Cette fonction permet de créer une nouvelle balise customisable <read-more> avec les propriétés que l'on désire à l'intérieur
+
+Pour que ce cette balise interne (appelés composant) puisse accèder à des variable et des données externe
+il faut écrire ces ligne là : 
+template: '<h1 v-text="variableProps"></h1>', (template = code html de la nouvelle balise)
+props: ['variableProps'], (cette variable doit être nommé de la même manière qu'au sein du composant)
+Une fois cette étape franchit, la nouvelle balise (externe) doit être paramétré de la sorte :
+<read-more v-text="variableProps">
+puis variableProps doit être définit dans la fonction data () {}, elle même dans le code parent
+
+
+ -->
