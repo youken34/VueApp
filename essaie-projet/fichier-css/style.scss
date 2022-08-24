@@ -1,5 +1,97 @@
+$default: #9e9e9e;
+$error: #d50000;
+$warning: #ff6f00;
+$neutral: #448aff;
+$success: #388e3c;
+$uhm: #c1610d;
 
+$light: #eee;
+$dark: #222;
 
+.erreur {
+  background-color: #676767;
+}
+
+.boutonRedirection:hover {
+  background-color: rgb(215, 215, 215);
+  color: #ffffff;
+}
+
+.boutonRedirection {
+  width: 100%;
+  margin-bottom: 0px;
+  background-color: #ff6969;
+  // border-radius: 1em;
+  border: none;
+  font-size: 1.25em;
+  position: relative;
+  display: block;
+
+}
+
+.message {
+  position: absolute;
+  left: 520px;
+  top: 200px;
+  background: $light;
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.31);
+  border-radius: 1em;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 140px;
+  margin: 2em auto;
+
+  button {
+    font-size: 20px;
+  }
+
+  i:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f128";
+    font-style: normal;
+    color: $light;
+    background: mix($dark, $default, 85%);
+    padding: 1em 0.75em;
+    font-size: 1.25em;
+    display: block;
+    width: 3.5em;
+    height: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    
+  }
+
+  h2 {
+    margin: 0.75em;
+    font-size: 1.25em;
+    position: relative;
+     display: block;
+    width: calc(100% - 3.5em - 1.5em);
+
+    span {
+      color: $default;
+    }
+
+    &:after {
+      content: "";
+      border-bottom: 0.1em solid $default;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.error {
+  header {
+    background: $error;
+  }
+}
 .boutton {
   width: 100px;
   height: 50px;

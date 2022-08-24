@@ -2,7 +2,7 @@
 <template>
 
 
-<section ref="alert" class="message error" v-show="afficherErreur == true">
+<section ref="alert" class="message error" :class="{erreur: afficherErreur}" v-show="afficherErreur == true">
       <header></header>
       <i></i>
       <h2>
@@ -90,7 +90,10 @@ import axios from 'axios';
                if (!this.Prenom) {
                         this.afficherErreur = true  
                         document.body.style.backgroundColor = "#676767";
-                        this.$refs.alert.style.backgroundColor = "#676767";
+                    }
+                    else {
+                        document.body.style.backgroundColor = "#FFFFF";
+                        this.$refs.alert.style.backgroundColor = "#FFFFF";
                     }
                 axios.post("http://localhost:3000/essaie-projet/Fichier-php/query.php",
                     {
@@ -205,208 +208,5 @@ import axios from 'axios';
 
 
 <style  lang="scss" scoped>
-@import '@../../../essaie-projet/fichier-css/global.scss';
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
-
-@import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css");
-
-$default: #9e9e9e;
-$error: #d50000;
-$warning: #ff6f00;
-$neutral: #448aff;
-$success: #388e3c;
-$uhm: #c1610d;
-
-$light: #eee;
-$dark: #222;
-
-// *,
-// *:after,
-// *:before {
-//   box-sizing: border-box;
-// }
-
-.boutonRedirection {
-  width: 100%;
-  margin-bottom: 0px;
-  background-color: #ff6969;
-  // border-radius: 1em;
-  border: none;
-  font-size: 1.25em;
-  position: relative;
-  display: block;
-
-}
-
-.boutonRedirection:hover {
-  background-color: rgb(215, 215, 215);
-  color: #ffffff;
-}
-.message {
-  position: absolute;
-  left: 520px;
-  top: 200px;
-  background: $light;
-  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.31);
-  border-radius: 1em;
-  overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
-  width: 500px;
-  height: 140px;
-  margin: 2em auto;
-
-  button {
-    font-size: 20px;
-  }
-
-  i:after {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f128";
-    font-style: normal;
-    color: $light;
-    background: mix($dark, $default, 85%);
-    padding: 1em 0.75em;
-    font-size: 1.25em;
-    display: block;
-    width: 3.5em;
-    height: 100%;
-    text-align: center;
-    box-sizing: border-box;
-    
-  }
-
-  h2 {
-    margin: 0.75em;
-    font-size: 1.25em;
-    position: relative;
-     display: block;
-    width: calc(100% - 3.5em - 1.5em);
-
-    span {
-      color: $default;
-    }
-
-    &:after {
-      content: "";
-      border-bottom: 0.1em solid $default;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }
-}
-
-.error {
-  header {
-    background: $error;
-  }
-
-  i:after {
-    background: mix($dark, $error, 85%);
-    color: lighten($error, 25%);
-    content: "\f12a";
-  }
-
-  h2 {
-    span {
-      color: $error;
-    }
-
-    &:after {
-      border-bottom: 0.1em solid $error;
-    }
-  }
-}
-
-.warning {
-  header {
-    background: $warning;
-  }
-
-  i:after {
-    background: mix($dark, $warning, 85%);
-    color: lighten($warning, 25%);
-    content: "\f071";
-  }
-
-  h2 {
-    span {
-      color: $warning;
-    }
-
-    &:after {
-      border-bottom: 0.1em solid $warning;
-    }
-  }
-}
-
-.neutral {
-  header {
-    background: $neutral;
-  }
-
-  i:after {
-    background: mix($dark, $neutral, 85%);
-    color: lighten($neutral, 25%);
-    content: "\f05a";
-  }
-
-  h2 {
-    span {
-      color: $neutral;
-    }
-
-    &:after {
-      border-bottom: 0.1em solid $neutral;
-    }
-  }
-}
-
-.success {
-  header {
-    background: $success;
-  }
-
-  i:after {
-    background: mix($dark, $success, 85%);
-    color: lighten($success, 25%);
-    content: "\f058";
-  }
-
-  h2 {
-    span {
-      color: $success;
-    }
-
-    &:after {
-      border-bottom: 0.1em solid $success;
-    }
-  }
-}
-
-.uhm {
-  header {
-    background: $uhm;
-  }
-
-  i:after {
-    background: mix($dark, $uhm, 85%);
-    color: lighten($uhm, 25%);
-    content: "\f2fe";
-  }
-
-  h2 {
-    span {
-      color: $uhm;
-    }
-
-    &:after {
-      border-bottom: 0.1em solid $uhm;
-    }
-  }
-}
+@import '@../../../essaie-projet/fichier-css/style.scss';
 </style>
